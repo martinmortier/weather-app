@@ -9,7 +9,7 @@ function App() {
     <>
       <SearchInput setCityName={setCityName} />
       { cityName && (
-        <Weather city={cityName}/>
+        <Weather cityName={cityName}/>
         )
       }
     </>
