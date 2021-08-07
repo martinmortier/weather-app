@@ -29,10 +29,10 @@ const Weather = ({cityName} : WeatherProps) => {
     return (
         <div>
             {cityWeather &&
-                <div>
+                <div style={{border:'1px solid black'}}>
                     {cityWeather.name}
                     <img src={`http://openweathermap.org/img/wn/${cityWeather.weather.icon}@2x.png`} alt="icon"/>
-                    <div style={{display:'flex'}}>
+                    <div style={{display:'flex', border:'1px solid black'}}>
                         {cityWeather.main.temp}°C
                         {cityWeather.main.temp_max}°C
                         {cityWeather.main.temp_min}°C
