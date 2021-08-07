@@ -4,12 +4,12 @@ import SearchInput from './components/SearchInput';
 import Weather from './components/Weather'
 import City from './interfaces/City'
 function App() {
-  const [city, setCity] = useState<string | null>("")
+  const [cityName, setCityName] = useState<string | null>("")
   return (
     <>
-      <SearchInput setCity={setCity} />
-      { city && (
-        <Weather city={city}/>
+      <SearchInput setCityName={setCityName} />
+      { cityName && (
+        <Weather city={cityName}/>
         )
       }
     </>

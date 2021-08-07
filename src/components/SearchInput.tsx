@@ -1,10 +1,10 @@
 import React from 'react'
 type SearchInputProps = {
-    setCity: Function
+    setCityName: Function
 }
-const SearchInput = ({setCity} : SearchInputProps) => {
+const SearchInput = ({setCityName} : SearchInputProps) => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCity(e.target.value)
+        setCityName(e.target.value)
     }
     return (
         <div>

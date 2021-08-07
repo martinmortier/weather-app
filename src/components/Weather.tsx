@@ -1,10 +1,10 @@
 type WeatherProps = {
-    city: string
+    cityName: string
 }
-const Weather = ({city} : WeatherProps) => {
+const Weather = ({cityName} : WeatherProps) => {
     return (
         <div>
-            {city}
+            {cityName}
         </div>
     )
 }
