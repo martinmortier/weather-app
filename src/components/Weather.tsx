@@ -7,7 +7,7 @@ type WeatherProps = {
 const Weather = ({cityName} : WeatherProps) => {
     const [cityWeather, setCityWeather] = useState<null | City>(null)
     const fetchData = async () => {
-        const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}&?units=metric`)
+        const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.REACT_APP_OPENWEATHERMAP_API_KEY}&units=metric`)
         console.log(response.data)
         setCityWeather({
             name: response.data.name,
@@ -29,13 +29,23 @@ const Weather = ({cityName} : WeatherProps) => {
     return (
         <div>
             {cityWeather &&
-                <div style={{border:'1px solid black'}}>
+                <div style={{backgroundColor:'white', display:'flex', justifyContent:'center'}}>
                     {cityWeather.name}
                     <img src={`http://openweathermap.org/img/wn/${cityWeather.weather.icon}@2x.png`} alt="icon"/>
-                    <div style={{display:'flex', border:'1px solid black'}}>
-                        {cityWeather.main.temp}°C
-                        {cityWeather.main.temp_max}°C
-                        {cityWeather.main.temp_min}°C
+                    <div style={{display:'flex', justifyContent:'center'}}>
+                        <div style={{display:'flex', flexDirection:'column'}}>
+                            <span>Temperature</span>
+                            {cityWeather.main.temp}°C
+                        </div>
+                        <div style={{display:'flex', flexDirection:'column'}}>
+                            <span>Temp. maximum</span>
+                            {cityWeather.main.temp_max}°C
+                        </div>
+                        <div style={{display:'flex', flexDirection:'column'}}>
+                            <span>Temp. minimum</span>
+                            {cityWeather.main.temp_min}°C
+                        </div>
+
                     </div>
                 </div>
             }
